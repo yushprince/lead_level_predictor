@@ -1,0 +1,145 @@
+{
+  "featureOrder": [
+    "age",
+    "education",
+    "occupation",
+    "take_home_exposure",
+    "water_source",
+    "kohl_usage",
+    "lipstick_usage",
+    "sindoor_usage",
+    "utensils",
+    "non_specific_symptoms",
+    "gastrointestinal",
+    "pica_symptoms",
+    "mother_bll"
+  ],
+  "encodings": {
+    "age": {
+      "Less than or Equal to 30": 0.0,
+      "Greater than 30": 1.0
+    },
+    "education": {
+      "College_HigherDegree": 0.0,
+      "NoCollege": 1.0
+    },
+    "occupation": {
+      "Housewife": 0.0,
+      "Agriculture": 1.0,
+      "AutoDriver": 2.0,
+      "AutoDriver_Ceramics": 3.0,
+      "AutoRepair": 4.0,
+      "Batteries": 5.0,
+      "Batteries_Lock": 6.0,
+      "Ceramics": 7.0,
+      "Construction_Furniture": 8.0,
+      "Construction_Painting_Plastic_Polishing": 9.0,
+      "Driver": 10.0,
+      "Electrician": 11.0,
+      "Engineer": 12.0,
+      "Factory": 13.0,
+      "Foundry": 14.0,
+      "Gold": 15.0,
+      "HairStylist": 16.0,
+      "Iron": 17.0,
+      "Machinery": 18.0,
+      "Mechanic": 19.0,
+      "None": 20.0,
+      "Painting": 21.0,
+      "Painting_Furniture": 22.0,
+      "Painting_Polishing": 23.0,
+      "Plastic": 24.0,
+      "Plastic-Manufacturing_Soldering": 25.0,
+      "Polishing": 26.0,
+      "Polishing_Soldering": 27.0,
+      "Soldering": 28.0,
+      "Steel": 29.0,
+      "Other": 30.0
+    },
+    "take_home_exposure": {
+      "Agriculture": 0.0,
+      "AutoDriver": 1.0,
+      "AutoDriver_Ceramics": 2.0,
+      "AutoRepair": 3.0,
+      "Batteries": 4.0,
+      "Batteries_Lock": 5.0,
+      "Ceramics": 6.0,
+      "Construction_Furniture": 7.0,
+      "Construction_Painting_Plastic_Polishing": 8.0,
+      "Driver": 9.0,
+      "Electrician": 10.0,
+      "Engineer": 11.0,
+      "Factory": 12.0,
+      "Foundry": 13.0,
+      "Gold": 14.0,
+      "HairStylist": 15.0,
+      "Iron": 16.0,
+      "Machinery": 17.0,
+      "Mechanic": 18.0,
+      "None": 19.0,
+      "Painting": 20.0,
+      "Painting_Furniture": 21.0,
+      "Painting_Polishing": 22.0,
+      "Plastic": 23.0,
+      "Plastic-Manufacturing_Soldering": 24.0,
+      "Polishing": 25.0,
+      "Polishing_Soldering": 26.0,
+      "Soldering": 27.0,
+      "Steel": 28.0,
+      "Other": 29.0
+    },
+    "water_source": {
+      "GroundWater": 0.0,
+      "GroundWater_ROWater": 1.0,
+      "GroundWater_TapWater": 2.0,
+      "ROWater": 3.0,
+      "TapWater": 4.0
+    },
+    "kohl_usage": {
+      "Yes": 1.0,
+      "No": 0.0
+    },
+    "lipstick_usage": {
+      "Yes": 1.0,
+      "No": 0.0
+    },
+    "sindoor_usage": {
+      "Yes": 1.0,
+      "No": 0.0
+    },
+    "utensils": {
+      "Aluminium": 0.0,
+      "Aluminium_Ceramic_Steel": 1.0,
+      "Aluminium_Steel": 2.0,
+      "Other_Steel": 3.0,
+      "Steel": 4.0
+    },
+    "non_specific_symptoms": {
+      "Headache": 0.0,
+      "Headache_Lethargy": 1.0,
+      "Headache_Tiredness": 2.0,
+      "Lethargy": 3.0,
+      "Lethargy_Tiredness": 4.0,
+      "No": 5.0,
+      "Tiredness": 6.0
+    },
+    "gastrointestinal": {
+      "Anorexia": 0.0,
+      "Anorexia_PainAbdomen": 1.0,
+      "Constipation": 2.0,
+      "No": 3.0,
+      "PainAbdomen": 4.0
+    },
+    "pica_symptoms": {
+      "CalciumDeficiency": 0.0,
+      "IronDeficiency": 1.0,
+      "No": 2.0
+    },
+    "mother_bll": {
+      "ND_5": 0.0,
+      "Between5_10": 1.0,
+      "Between10_15": 2.0,
+      "GreaterThan15": 3.0
+    }
+  }
+}
