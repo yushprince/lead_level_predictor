@@ -2,7 +2,11 @@ import '../models/prediction_result.dart';
 
 class SuggestionsService {
   List<String> buildSuggestions(PredictionResult? result) {
+
     if (result == null) {
+
+    if (result == null || result.riskLevel == 'Incomplete input') {
+
       return const [
         'Complete the assessment to view tailored suggestions.',
       ];

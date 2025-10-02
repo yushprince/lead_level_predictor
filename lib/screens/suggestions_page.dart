@@ -15,6 +15,7 @@ class SuggestionsPage extends StatelessWidget {
     return AnimatedBuilder(
       animation: controller,
       builder: (context, _) {
+
         if (controller.isLoading) {
           return _buildLoading(textTheme);
         }
@@ -27,13 +28,21 @@ class SuggestionsPage extends StatelessWidget {
         final suggestions = _service.buildSuggestions(controller.result);
         final riskLevel = controller.result?.riskLevel;
 
+
+        final suggestions = _service.buildSuggestions(controller.result);
+
         return ListView(
           padding: const EdgeInsets.all(16),
           children: [
             Text('Suggestions', style: textTheme.headlineSmall),
             const SizedBox(height: 12),
+
             if (riskLevel != null)
               _buildRiskSummary(context, riskLevel, textTheme)
+
+            if (controller.result != null && controller.result?.riskLevel != 'Incomplete input')
+              _buildRiskSummary(context, controller.result!.riskLevel, textTheme)
+
             else
               _buildPlaceholderCard(context, textTheme),
             const SizedBox(height: 16),

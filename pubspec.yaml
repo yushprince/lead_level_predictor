@@ -11,9 +11,15 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.6
+
   tflite_flutter: ^0.10.4
 
 flutter:
   uses-material-design: true
   assets:
     - assets/models/
+
+
+flutter:
+  uses-material-design: true
+
