@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../controllers/lead_prediction_controller.dart';
 import '../services/suggestions_service.dart';
 
@@ -14,14 +15,34 @@ class SuggestionsPage extends StatelessWidget {
     return AnimatedBuilder(
       animation: controller,
       builder: (context, _) {
+
+        if (controller.isLoading) {
+          return _buildLoading(textTheme);
+        }
+
+        final error = controller.error;
+        if (error != null) {
+          return _buildError(context, textTheme, error);
+        }
+
         final suggestions = _service.buildSuggestions(controller.result);
+        final riskLevel = controller.result?.riskLevel;
+
+
+        final suggestions = _service.buildSuggestions(controller.result);
+
         return ListView(
           padding: const EdgeInsets.all(16),
           children: [
             Text('Suggestions', style: textTheme.headlineSmall),
             const SizedBox(height: 12),
+
+            if (riskLevel != null)
+              _buildRiskSummary(context, riskLevel, textTheme)
+
             if (controller.result != null && controller.result?.riskLevel != 'Incomplete input')
               _buildRiskSummary(context, controller.result!.riskLevel, textTheme)
+
             else
               _buildPlaceholderCard(context, textTheme),
             const SizedBox(height: 16),
@@ -80,6 +101,48 @@ class SuggestionsPage extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLoading(TextTheme textTheme) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const CircularProgressIndicator(),
+          const SizedBox(height: 16),
+          Text('Preparing suggestions…', style: textTheme.titleMedium),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildError(BuildContext context, TextTheme textTheme, String message) {
+    final colorScheme = Theme.of(context).colorScheme;
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Card(
+        color: colorScheme.errorContainer,
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(Icons.error_outline, color: colorScheme.onErrorContainer),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Text(
+                  message,
+                  style: textTheme.bodyMedium?.copyWith(
+                    color: colorScheme.onErrorContainer,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
