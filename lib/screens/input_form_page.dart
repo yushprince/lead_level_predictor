@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import '../controllers/lead_prediction_controller.dart';
 
 class InputFormPage extends StatefulWidget {
-  const InputFormPage({super.key, required this.controller});
+  const InputFormPage({
+    super.key,
+    required this.controller,
+    this.onCompleted,
+  });
 
   final LeadPredictionController controller;
+  final VoidCallback? onCompleted;
 
   @override
   State<InputFormPage> createState() => _InputFormPageState();
@@ -40,6 +45,7 @@ class _InputFormPageState extends State<InputFormPage> {
         _goToPage(_currentPage + 1);
       } else {
         widget.controller.predict();
+        widget.onCompleted?.call();
         if (!mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Prediction updated. Check the results tab.')),

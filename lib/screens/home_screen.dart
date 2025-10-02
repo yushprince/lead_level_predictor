@@ -25,7 +25,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final tabs = [
-      InputFormPage(controller: _controller),
+      InputFormPage(
+        controller: _controller,
+        onCompleted: () => setState(() => _selectedIndex = 1),
+      ),
       ResultsPage(controller: _controller),
       SuggestionsPage(controller: _controller),
       const LeadToxicityPage(),
