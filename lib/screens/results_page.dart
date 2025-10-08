@@ -35,6 +35,7 @@ class ResultsPage extends StatelessWidget {
 
         final result = controller.result;
 
+
         final entries = controller.input.asDisplayMap().entries.toList();
 
         return ListView(
@@ -72,6 +73,7 @@ class ResultsPage extends StatelessWidget {
                 ),
               ),
             ),
+
 
             if (result != null && result.riskLevel != 'Incomplete input')
               Card(
@@ -123,6 +125,7 @@ class ResultsPage extends StatelessWidget {
                   ),
                 ),
               ),
+
 
             const SizedBox(height: 24),
             Text('Your Inputs', style: textTheme.titleMedium),

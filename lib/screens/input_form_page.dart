@@ -8,6 +8,7 @@ class InputFormPage extends StatefulWidget {
 
   final LeadPredictionController controller;
 
+
 import '../controllers/lead_prediction_controller.dart';
 
 class InputFormPage extends StatefulWidget {
@@ -19,6 +20,7 @@ class InputFormPage extends StatefulWidget {
 
   final LeadPredictionController controller;
   final VoidCallback? onCompleted;
+
 
 
   @override
@@ -51,7 +53,11 @@ class _InputFormPageState extends State<InputFormPage> {
 
   Future<void> _handleNext() async {
 
+
+  Future<void> _handleNext() async {
+
   void _handleNext() {
+
 
     final currentForm = _formKeys[_currentPage].currentState;
     if (currentForm != null && currentForm.validate()) {
@@ -77,11 +83,13 @@ class _InputFormPageState extends State<InputFormPage> {
             behavior: SnackBarBehavior.floating,
           ),
 
+
         widget.controller.predict();
         widget.onCompleted?.call();
         if (!mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Prediction updated. Check the results tab.')),
+
 
         );
       }
@@ -406,6 +414,7 @@ class _InputFormPageState extends State<InputFormPage> {
         );
       },
 
+
     final textTheme = Theme.of(context).textTheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -654,6 +663,7 @@ class _InputFormPageState extends State<InputFormPage> {
           ),
         ),
       ],
+
 
     );
   }

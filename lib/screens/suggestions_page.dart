@@ -29,6 +29,7 @@ class SuggestionsPage extends StatelessWidget {
         final riskLevel = controller.result?.riskLevel;
 
 
+
         final suggestions = _service.buildSuggestions(controller.result);
 
         return ListView(
@@ -40,8 +41,13 @@ class SuggestionsPage extends StatelessWidget {
             if (riskLevel != null)
               _buildRiskSummary(context, riskLevel, textTheme)
 
+
+            if (riskLevel != null)
+              _buildRiskSummary(context, riskLevel, textTheme)
+
             if (controller.result != null && controller.result?.riskLevel != 'Incomplete input')
               _buildRiskSummary(context, controller.result!.riskLevel, textTheme)
+
 
             else
               _buildPlaceholderCard(context, textTheme),

@@ -90,6 +90,7 @@ class PredictionService {
     }
     return 'High';
 
+
 import '../models/lead_input.dart';
 import '../models/prediction_result.dart';
 
@@ -263,6 +264,7 @@ class PredictionService {
     final valueScores = scoreTable[key];
     if (valueScores == null) return 0;
     return valueScores[value] ?? 0.8;
+
 
   }
 }
