@@ -17,6 +17,9 @@ class LeadInput {
       'non_specific_symptoms': null,
       'gastrointestinal': null,
       'pica_symptoms': null,
+
+      'mother_bll': null,
+
     });
   }
 
@@ -36,10 +39,19 @@ class LeadInput {
   }
 
   String _formatKey(String key) {
+
     final words = key
         .split('_')
         .map((word) => word[0].toUpperCase() + word.substring(1))
         .toList();
+
+    final words = key.split('_').map((word) {
+      if (word.toLowerCase() == 'bll') {
+        return 'BLL';
+      }
+      return word[0].toUpperCase() + word.substring(1);
+    }).toList();
+
     return words.join(' ');
   }
 
