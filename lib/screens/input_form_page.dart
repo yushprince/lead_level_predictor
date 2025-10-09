@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 
+
 import '../controllers/lead_prediction_controller.dart';
 
 class InputFormPage extends StatefulWidget {
   const InputFormPage({super.key, required this.controller});
 
   final LeadPredictionController controller;
+
 
 
 import '../controllers/lead_prediction_controller.dart';
@@ -20,7 +22,6 @@ class InputFormPage extends StatefulWidget {
 
   final LeadPredictionController controller;
   final VoidCallback? onCompleted;
-
 
 
   @override
@@ -56,7 +57,11 @@ class _InputFormPageState extends State<InputFormPage> {
 
   Future<void> _handleNext() async {
 
+
+  Future<void> _handleNext() async {
+
   void _handleNext() {
+
 
 
     final currentForm = _formKeys[_currentPage].currentState;
@@ -72,10 +77,20 @@ class _InputFormPageState extends State<InputFormPage> {
         final error = widget.controller.error;
         final messenger = ScaffoldMessenger.of(context);
         messenger.hideCurrentSnackBar();
+
+        if (error == null) {
+          widget.onCompleted?.call();
+        }
+        messenger.showSnackBar(
+          SnackBar(
+            content: Text(
+              error ?? 'Prediction updated. Showing results.',
+
         messenger.showSnackBar(
           SnackBar(
             content: Text(
               error ?? 'Prediction updated. Check the results tab.',
+
             ),
             backgroundColor: error != null
                 ? theme.colorScheme.errorContainer
@@ -84,11 +99,13 @@ class _InputFormPageState extends State<InputFormPage> {
           ),
 
 
+
         widget.controller.predict();
         widget.onCompleted?.call();
         if (!mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Prediction updated. Check the results tab.')),
+
 
 
         );
@@ -351,6 +368,7 @@ class _InputFormPageState extends State<InputFormPage> {
                                 'No',
                               ],
                             ),
+
                             const SizedBox(height: 12),
                             _buildDropdown(
                               label: 'Mother Blood Lead Level',
@@ -362,6 +380,7 @@ class _InputFormPageState extends State<InputFormPage> {
                                 'GreaterThan15',
                               ],
                             ),
+
                           ],
                         ),
                       ),
@@ -413,6 +432,7 @@ class _InputFormPageState extends State<InputFormPage> {
           ],
         );
       },
+
 
 
     final textTheme = Theme.of(context).textTheme;
@@ -663,6 +683,7 @@ class _InputFormPageState extends State<InputFormPage> {
           ),
         ),
       ],
+
 
 
     );

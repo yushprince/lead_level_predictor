@@ -29,11 +29,13 @@ class ResultsPage extends StatelessWidget {
         }
 
 
+
         if (!controller.hasPredicted) {
           return _buildPlaceholder(textTheme);
         }
 
         final result = controller.result;
+
 
 
         final entries = controller.input.asDisplayMap().entries.toList();
@@ -73,6 +75,7 @@ class ResultsPage extends StatelessWidget {
                 ),
               ),
             ),
+
 
 
             if (result != null && result.riskLevel != 'Incomplete input')
@@ -125,6 +128,7 @@ class ResultsPage extends StatelessWidget {
                   ),
                 ),
               ),
+
 
 
             const SizedBox(height: 24),

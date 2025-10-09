@@ -8,11 +8,13 @@ import 'results_page.dart';
 import 'suggestions_page.dart';
 
 
+
 import '../controllers/lead_prediction_controller.dart';
 import 'input_form_page.dart';
 import 'results_page.dart';
 import 'suggestions_page.dart';
 import 'lead_toxicity_page.dart';
+
 
 
 
@@ -26,6 +28,14 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   late final LeadPredictionController _controller;
+
+
+  void _showResults() {
+    setState(() {
+      _selectedIndex = 1;
+    });
+  }
+
 
   @override
   void initState() {
@@ -43,6 +53,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final tabs = [
+
+      InputFormPage(
+        controller: _controller,
+        onCompleted: _showResults,
+      ),
+
       InputFormPage(controller: _controller),
 
 
@@ -52,6 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
         controller: _controller,
         onCompleted: () => setState(() => _selectedIndex = 1),
       ),
+
 
 
       ResultsPage(controller: _controller),

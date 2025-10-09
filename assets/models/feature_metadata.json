@@ -14,8 +14,12 @@
 
     "pica_symptoms"
 
+
+    "pica_symptoms"
+
     "pica_symptoms",
     "mother_bll"
+
 
   ],
   "encodings": {
@@ -139,12 +143,14 @@
       "IronDeficiency": 1.0,
       "No": 2.0
 
+
     },
     "mother_bll": {
       "ND_5": 0.0,
       "Between5_10": 1.0,
       "Between10_15": 2.0,
       "GreaterThan15": 3.0
+
 
     }
   }
