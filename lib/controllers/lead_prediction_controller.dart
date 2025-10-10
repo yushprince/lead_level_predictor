@@ -49,6 +49,7 @@ class LeadPredictionController extends ChangeNotifier {
 
 
 
+
 import '../models/lead_input.dart';
 import '../models/prediction_result.dart';
 import '../services/prediction_service.dart';
@@ -71,11 +72,16 @@ class LeadPredictionController extends ChangeNotifier {
     _hasPredicted = true;
     notifyListeners();
 
+
   }
 
   void reset() {
     input = LeadInput.empty();
     _result = null;
+<
+    _isLoading = false;
+    _error = null;
+
 
     _isLoading = false;
     _error = null;

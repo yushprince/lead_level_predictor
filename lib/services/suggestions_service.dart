@@ -11,7 +11,11 @@ class SuggestionsService {
 
     if (result == null) {
 
+
+    if (result == null) {
+
     if (result == null || result.riskLevel == 'Incomplete input') {
+
 
 
 
