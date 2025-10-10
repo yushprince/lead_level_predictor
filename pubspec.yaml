@@ -11,11 +11,27 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.6
+
   # Pin to 0.10.3 to avoid the UnmodifiableUint8ListView API that ships with 0.10.4
   # (not available on older stable Flutter channels yet).
   tflite_flutter: 0.10.3
+
+
+  tflite_flutter: ^0.10.4
+
 
 flutter:
   uses-material-design: true
   assets:
     - assets/models/
+
+
+
+
+
+flutter:
+  uses-material-design: true
+
+
+
+
