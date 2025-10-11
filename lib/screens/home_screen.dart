@@ -9,11 +9,13 @@ import 'suggestions_page.dart';
 
 
 
+
 import '../controllers/lead_prediction_controller.dart';
 import 'input_form_page.dart';
 import 'results_page.dart';
 import 'suggestions_page.dart';
 import 'lead_toxicity_page.dart';
+
 
 
 
@@ -58,6 +60,13 @@ class _HomeScreenState extends State<HomeScreen> {
         controller: _controller,
         onCompleted: _showResults,
       ),
+
+
+
+
+
+
+
 
       InputFormPage(controller: _controller),
 

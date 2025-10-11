@@ -30,11 +30,13 @@ class ResultsPage extends StatelessWidget {
 
 
 
+
         if (!controller.hasPredicted) {
           return _buildPlaceholder(textTheme);
         }
 
         final result = controller.result;
+
 
 
 
@@ -75,6 +77,7 @@ class ResultsPage extends StatelessWidget {
                 ),
               ),
             ),
+
 
 
 

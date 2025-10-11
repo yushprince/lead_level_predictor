@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 
 
 
+
 import '../controllers/lead_prediction_controller.dart';
 
 class InputFormPage extends StatefulWidget {
   const InputFormPage({super.key, required this.controller});
 
   final LeadPredictionController controller;
+
 
 
 
@@ -60,7 +62,11 @@ class _InputFormPageState extends State<InputFormPage> {
 
   Future<void> _handleNext() async {
 
+
+  Future<void> _handleNext() async {
+
   void _handleNext() {
+
 
 
 
@@ -86,10 +92,12 @@ class _InputFormPageState extends State<InputFormPage> {
             content: Text(
               error ?? 'Prediction updated. Showing results.',
 
+
         messenger.showSnackBar(
           SnackBar(
             content: Text(
               error ?? 'Prediction updated. Check the results tab.',
+
 
             ),
             backgroundColor: error != null
@@ -100,11 +108,13 @@ class _InputFormPageState extends State<InputFormPage> {
 
 
 
+
         widget.controller.predict();
         widget.onCompleted?.call();
         if (!mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Prediction updated. Check the results tab.')),
+
 
 
 
@@ -369,6 +379,7 @@ class _InputFormPageState extends State<InputFormPage> {
                               ],
                             ),
 
+
                             const SizedBox(height: 12),
                             _buildDropdown(
                               label: 'Mother Blood Lead Level',
@@ -380,6 +391,7 @@ class _InputFormPageState extends State<InputFormPage> {
                                 'GreaterThan15',
                               ],
                             ),
+
 
                           ],
                         ),
@@ -432,6 +444,7 @@ class _InputFormPageState extends State<InputFormPage> {
           ],
         );
       },
+
 
 
 
@@ -683,6 +696,7 @@ class _InputFormPageState extends State<InputFormPage> {
           ),
         ),
       ],
+
 
 
 
